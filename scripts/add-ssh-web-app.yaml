@@ -28,4 +28,6 @@ runcmd:
   - sudo su terraform
   - sleep 10
   - docker -v > test.txt
-  - docker run wordpress
+  - docker run --detach wordpress
+  - docker run --detach chentex/random-logger
+  - docker run --detach chentex/random-logger
