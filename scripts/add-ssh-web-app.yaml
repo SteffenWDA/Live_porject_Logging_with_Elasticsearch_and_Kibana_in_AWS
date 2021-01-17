@@ -22,7 +22,7 @@ users:
 
 packages:
   - docker.io
-
+#TODO: I need to check the rights here again
 runcmd:
   - sleep 10
   - sudo su terraform
