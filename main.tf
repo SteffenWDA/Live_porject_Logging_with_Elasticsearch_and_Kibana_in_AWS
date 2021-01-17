@@ -85,7 +85,7 @@ resource "aws_security_group" "allow_http" {
     Name = "allow_http"
   }
 }
-
+#TODO. check if this is needed
 resource "aws_security_group" "allow_https" {
   name = "allow_https"
   description = "aws_security_group to allow https"
