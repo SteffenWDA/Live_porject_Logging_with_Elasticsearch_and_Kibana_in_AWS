@@ -17,7 +17,6 @@ resource "aws_instance" "liveProjectInstance1" {
   instance_type               = "t2.micro"
   associate_public_ip_address = true
   user_data                   = data.template_file.user_data.rendered
-  #TODO: if I access the values as attributes it causes problems during destroy security_groups = [ aws_security_group.allow_ssh.name,aws_security_group.allow_http.name,aws_security_group.allow_https.name]
   security_groups = var.securityGroups
   tags = {
     Name = "liveProjectInstance1"
@@ -30,7 +29,6 @@ resource "aws_instance" "liveProjectInstance2" {
   instance_type               = "t2.micro"
   associate_public_ip_address = true
   user_data                   = data.template_file.user_data.rendered
-  #TODO: if I access the values as attributes it causes problems during destroy security_groups = [ aws_security_group.allow_ssh.name,aws_security_group.allow_http.name,aws_security_group.allow_https.name]
   security_groups = var.securityGroups
   tags = {
     Name = "liveProjectInstance2"
