@@ -1,2 +1,3 @@
 public_ssh_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGmOeON7VhrB/a+qAfk73MWO7UEIG23ym2mufxwsag9Hp61BfIGa9M3UsF0Zp4/I2ce0EfpwbpgmWc0NaFPu/meYa8uZaDRQLxVwUAm1/1Vo7lcXYCnNC73djk6xxFoIdE3PDiQksB75iHT9/cpc9cqjSMFeD+RpaZWBTx1sJ1u9wYCa0ni7ytVhx+t512dvZ7yV98dt2mtOMVh/T6A3JLT9YZVI1ItPVwmJtam4H3mzKuDs+3bIuboERPXM8skrGIY0GG0XYs13XAIatku4a0x7JJVtCEJkWlcKG7ByqrAc+ZJ0rXNzIjPUoSBSvE2JJ0GmmL/d2VbN11hwxNcq23 steffenweitkamp11@googlemail.com"
 namespace = "stweikta"
+availability_zones = ["us-west-2a"]

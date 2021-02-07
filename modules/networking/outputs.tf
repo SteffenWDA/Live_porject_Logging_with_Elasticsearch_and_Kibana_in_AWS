@@ -1,7 +1,11 @@
 output "securityGroupList" {
-  value = list(aws_security_group.allow_https.name,aws_security_group.allow_http.name,aws_security_group.allow_ssh.name)
+  value = list(aws_security_group.allow_https.id,aws_security_group.allow_http.id,aws_security_group.allow_ssh.id)
 }
 
-output "subnet" {
-  value = module.vpc_example_complete-vpc.public_subnets
+output "public_subnets" {
+  value = module.vpc.public_subnets
+}
+
+output "vpc_id" {
+  value = module.vpc.vpc_id
 }

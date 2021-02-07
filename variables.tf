@@ -7,3 +7,8 @@ variable "namespace" {
   description = "namespace which is used to identify related components"
   type = string
 }
+
+variable "availability_zones" {
+  description = ""
+  type = list(string)
+}

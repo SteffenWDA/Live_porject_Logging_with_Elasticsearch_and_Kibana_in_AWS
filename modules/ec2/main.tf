@@ -30,7 +30,7 @@ resource "aws_instance" "liveProjectInstance1" {
   user_data                   = data.template_file.user_data.rendered
   security_groups = var.securityGroups
   key_name = aws_key_pair.example_ssh_key.key_name
-  subnet_id = var.public_subnet_ids[0]
+  subnet_id = var.public_subnet_ids[1]
   tags = {
     Name = "liveProjectInstance1"
   }
@@ -43,7 +43,7 @@ resource "aws_instance" "liveProjectInstance2" {
   user_data                   = data.template_file.user_data.rendered
   security_groups = var.securityGroups
   key_name = aws_key_pair.example_ssh_key.key_name
-  subnet_id = var.public_subnet_ids[0]
+  subnet_id = var.public_subnet_ids[1]
 
   tags = {
     Name = "liveProjectInstance2"

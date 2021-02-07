@@ -14,3 +14,7 @@ output "PublicDnsInstance2" {
 output "PublicIpInstance2" {
   value = module.ec2.public_ip_liveProjectInstance1
 }
+
+output "public_subnets" {
+  value = module.networking.public_subnets
+}
