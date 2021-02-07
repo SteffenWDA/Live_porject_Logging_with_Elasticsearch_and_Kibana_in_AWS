@@ -1,3 +1,9 @@
+module "vpc_example_complete-vpc" {
+  source  = "terraform-aws-modules/vpc/aws//examples/complete-vpc"
+  version = "2.70.0"
+  name = var.vpc_name
+}
+
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "aws_security_group to enable ssh"

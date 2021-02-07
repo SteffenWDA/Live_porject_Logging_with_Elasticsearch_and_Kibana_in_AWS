@@ -8,4 +8,5 @@ module "ec2" {
 
 module "networking" {
   source = "./modules/networking"
+  vpc_name = var.namespace
 }
