@@ -1,0 +1,33 @@
+#cloud-config
+# Add groups to the system
+# Adds the ubuntu group with members 'root' and 'sys'
+# and the empty group hashicorp.
+groups:
+  - ubuntu: [ root,sys ]
+  - hashicorp
+
+# Add users to the system. Users are added after groups are added.
+users:
+  - default
+  - name: terraform
+    gecos: terraform
+    shell: /bin/bash
+    primary_group: hashicorp
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin, ubuntu
+    ssh_import_id:
+    lock_passwd: false
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtQ5fceXT+tVvFs2vXYpq+sl2/6mCwPrm9r2dW//vh8kuMuoKAegMZpTWaUZ5lbs7I1LIfxIJbtPQ/DaPR1mO5G2tGYsGaxgjUDA49w2TGW2wfBUx4p5ZfcNAX4KJuO2DSiHL3z77mxUFZBdrwao2dl9nS5np339cdqa34+qogIwF/6Oa/bmqDscf+KTud2uQrC0SeTuKm47OKQCN0T6FPEmfpKGMO4tLB504YkhAxPMBa5M8uVUu3wwHiC84IigXeBaTu416gzXtMTbOcb9ROV6tqG9xvKyrclneGIZBCBQQcq3wvvJBUnaMG3VcfbogM8jQxnCYoPLlC8fZHMWBz steffenweitkamp11@googlemail.com
+
+packages:
+  - docker.io
+#TODO: I need to check the rights here again
+runcmd:
+  - sleep 10
+  - sudo su terraform
+  - sleep 10
+  - docker -v > test.txt
+  - docker run --detach wordpress
+  - docker run --detach chentex/random-logger
+  - docker run --detach chentex/random-logger
