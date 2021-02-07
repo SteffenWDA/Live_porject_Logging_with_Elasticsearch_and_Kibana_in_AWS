@@ -72,3 +72,7 @@ resource "aws_security_group" "allow_https" {
     Name = "allow_https"
   }
 }
+
+output "securityGroupList" {
+  value = list(aws_security_group.allow_https.name,aws_security_group.allow_http.name,aws_security_group.allow_ssh.name)
+}
