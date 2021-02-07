@@ -1,6 +1,10 @@
 #TODO Implement keys as resource and pass pub key here
 
 
+variable "securityGroups" {
+  description = "List of security groups for ec2 instances"
+  type = list(string)
+}
 
 data "template_file" "user_data" {
   template = file("scripts/add-ssh-web-app.yaml")
@@ -14,7 +18,7 @@ resource "aws_instance" "liveProjectInstance1" {
   associate_public_ip_address = true
   user_data                   = data.template_file.user_data.rendered
   #TODO: if I access the values as attributes it causes problems during destroy security_groups = [ aws_security_group.allow_ssh.name,aws_security_group.allow_http.name,aws_security_group.allow_https.name]
-  security_groups = ["allow_ssh","allow_http","allow_https"]
+  security_groups = var.securityGroups
   tags = {
     Name = "liveProjectInstance1"
   }
@@ -27,7 +31,7 @@ resource "aws_instance" "liveProjectInstance2" {
   associate_public_ip_address = true
   user_data                   = data.template_file.user_data.rendered
   #TODO: if I access the values as attributes it causes problems during destroy security_groups = [ aws_security_group.allow_ssh.name,aws_security_group.allow_http.name,aws_security_group.allow_https.name]
-  security_groups = ["allow_ssh","allow_http","allow_https"]
+  security_groups = var.securityGroups
   tags = {
     Name = "liveProjectInstance2"
   }
