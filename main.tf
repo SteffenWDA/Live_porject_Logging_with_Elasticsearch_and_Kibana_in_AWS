@@ -13,3 +13,10 @@ module "networking" {
   vpc_name = var.namespace
   availability_zones =var.availability_zones
 }
+
+module "elastic_search" {
+  source = "./modules/elasticsearch"
+  subnet_id = module.networking.public_subnets [1]
+  vpc_id = module.networking.vpc_id
+  cidr_block=module.networking.cidr_blocks
+}
